@@ -8,7 +8,7 @@ Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-SetCron allows you to schedule cronjobs on your wordpress admin panel via an automator provided by https://www.setcron.com
+SetCron allows you to schedule cronjobs on your wordpress admin panel via an automator.
 
 == Description ==
 
@@ -53,5 +53,8 @@ You may also post your request here at the support tab.
 
 == Changelog ==
 
-= 1.0 =
-Initial commit
+= 1.0.1 =
+Updated readme.txt.
+
+= 1.0.0 =
+Initial commit.
