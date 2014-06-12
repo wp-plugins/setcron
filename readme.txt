@@ -4,10 +4,11 @@ Site: https://setcron.com/
 Tags: admin, cronjob, cron, crontab, wp-cron, scheduled task, task scheduler, scheduled posts, web cron, plugin
 Requires at least: 3.0.1
 Tested up to: 3.9.x
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-SetCron allows you to schedule cronjobs on your wordpress admin panel. This service is provided for free by [https://www.setcron.com](https://www.setcron.com).
+SetCron allows you to schedule cronjobs on your wordpress admin panel via an automator provided by https://www.setcron.com
 
 == Description ==
 
@@ -22,18 +23,6 @@ Features include:
 * Email Reports
 * Failure Notifications
 * Execution Statistics
-
-**A comparison of SetCron against alternatives**
-
-|                                        | SetCron    | Linux Crontab  | User Triggered Cron          |
-|----------------------------------------|------------|----------------|------------------------------|
-| Accurate executions                    | Yes        | Yes            | Dependent on visitor traffic |
-| Multiple Timezone Support              | Yes        | Need to script | Need to script               |
-| Complexity                             | Low        | High           | High                         |
-| Requires Server / Shell Command Access | No         | Yes            | No                           |
-| Process                                | Background | Background     | User Page Request            |
-| Monitor Performance                    | Yes        | Need to script | Need to script               |
-| Email Notification                     | Yes        | Need to script | Need to script               |
 	
 This service is provided for free by SetCron.
 
@@ -53,7 +42,7 @@ For more information, check out [https://www.setcron.com](https://www.setcron.co
 == Frequently Asked Questions ==
 
 SetCron provides support and FAQs for all its users [here](https://www.setcron.com/help).
-You can also post your request here at the support tab.
+You may also post your request here at the support tab.
 
 == Screenshots ==
 
