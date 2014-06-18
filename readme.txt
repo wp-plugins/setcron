@@ -4,7 +4,7 @@ Site: https://setcron.com/
 Tags: admin, cronjob, cron, crontab, wp-cron, scheduled task, task scheduler, scheduled posts, web cron, plugin
 Requires at least: 3.0.1
 Tested up to: 3.9.x
-Stable tag: 1.0.2
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -52,6 +52,9 @@ You may also post your request here at the support tab.
 4. `Now you are ready schedule cronjobs for your application.`
 
 == Changelog ==
+
+= 1.1.0 =
+Added delete function under 'Bulk Actions'.
 
 = 1.0.2 =
 Removed some unused files and folders from assets.
