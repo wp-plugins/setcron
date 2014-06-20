@@ -4,11 +4,12 @@ Site: https://setcron.com/
 Tags: admin, cronjob, cron, crontab, wp-cron, scheduled task, task scheduler, scheduled posts, web cron, plugin
 Requires at least: 3.0.1
 Tested up to: 3.9.x
-Stable tag: 1.1.0
+Version: 1.1.1
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-SetCron allows you to schedule cronjobs on your wordpress admin panel via an automator.
+SetCron allows you to schedule cronjobs on your wordpress admin panel via an automator. This service entitles you to 1 free cronjob but you do need to signup for an API key at setcron.com 
 
 == Description ==
 
@@ -19,14 +20,19 @@ Features include:
 * Full crontab functionality
 * Timezone support
 * Start / Stop settings
-* Unlimited executions (Every minute)
+* Unlimited executions (Run every minute)
 * Email Reports
 * Failure Notifications
 * Execution Statistics
 	
-This service is provided for free by SetCron.
+This service entitles you to 1 free cronjob but you do need to signup for an API key at setcron.com 
+
+Sign up takes less than 30 seconds and you can use gmail, yahoo or facebook to login.
+
+If you have any questions, please do email us at support@setcron.com
 
 For more information, check out [https://www.setcron.com](https://www.setcron.com).
+
 
 == Installation ==
 
@@ -52,6 +58,9 @@ You may also post your request here at the support tab.
 4. `Now you are ready schedule cronjobs for your application.`
 
 == Changelog ==
+
+= 1.1.1 =
+Edited readme.txt.
 
 = 1.1.0 =
 Added delete function under 'Bulk Actions'.
