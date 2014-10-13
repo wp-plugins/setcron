@@ -6,8 +6,8 @@
   Plugin Name: SetCron
   Plugin URI: http://www.setcron.com/
   Description: SetCron allows you to schedule cronjobs on your wordpress admin panel. This service is provided for free by SetCron.com. To get started: 1) Click the "Activate" link to the left of this description, 2) <a href="www.setcron.com/signup">Sign up for a SetCron API key</a>, and 3) Go to your SetCron configuration page, and save your API key.
-  Stable tag: 1.1.2
-  Version: 1.1.2
+  Stable tag: 1.1.3
+  Version: 1.1.3
   Author: SetCron
   Author URI: http://www.setcron.com/
  */
@@ -19,9 +19,9 @@ function admin_add_help_tab () {
 
     // Add my_help_tab if current screen is the setcron page
     $screen->add_help_tab( array(
-        'id'	=> 'setcron_help_tab',
-        'title'	=> __('Help'),
-        'content'	=> '<p>' . __( 'For more information, check out <a href="https://www.setcron.com">https://www.setcron.com</a>' ) . '</p>',
+        'id'    => 'setcron_help_tab',
+        'title' => __('Help'),
+        'content'   => '<p>' . __( 'For more information, check out <a href="https://www.setcron.com">https://www.setcron.com</a>' ) . '</p>',
     ) );
 }
 
@@ -39,13 +39,13 @@ function setcron_admin_settings() {
     $options_page = add_options_page('SetCron', 'SetCron', 'manage_options', 'settings', 'setcron_settings');
     add_action('load-'.$options_page, 'admin_add_help_tab');
 
-	//call register settings function
-	add_action( 'admin_init', 'register_setcron_settings' );
+    //call register settings function
+    add_action( 'admin_init', 'register_setcron_settings' );
 }
 
 function setcron_admin_actions() {
     //create new top-level menu
-	add_menu_page('', 'SetCron', 'administrator', 'setcron-tasks', 'setcron_tasks');
+    add_menu_page('', 'SetCron', 'administrator', 'setcron-tasks', 'setcron_tasks');
     add_submenu_page(
     'setcron-tasks',        // parent slug, same as above menu slug
     'Tasks',        // empty page title
@@ -58,8 +58,8 @@ function setcron_admin_actions() {
 }
 
 function register_setcron_settings() {
-	//register our settings
-	register_setting( 'setcron-settings-group', 'setcron_apikey' );
+    //register our settings
+    register_setting( 'setcron-settings-group', 'setcron_apikey' );
 }
 ?>
 <?php
@@ -230,7 +230,7 @@ function setcron_tasks() {
                         <option value="1"<?php echo (isset($_POST['apply_filter']) && isset($_POST['filter_status']) && $_POST['filter_status'] == 1 )?' selected="selected"':''; ?>>Active</option>
                         <option value="0"<?php echo (isset($_POST['apply_filter']) && isset($_POST['filter_status']) && $_POST['filter_status'] == 0 && $_POST['filter_status'] != '' )?' selected="selected"':''; ?>>Inactive</option>
                     </select>
-                    <input type="submit" value="Filter" class="button" name="apply_filter">		
+                    <input type="submit" value="Filter" class="button" name="apply_filter">     
                 </div>
                 <br class="clear">
             </div>
@@ -259,7 +259,7 @@ function setcron_tasks() {
                             ?>
                             <tr>
                                 <th><input type="checkbox" name="ids[]" value="<?php echo $row->id; ?>" class="checkbox" /></th>
-                                <td><a href="<?php echo menu_page_url('setcron-task',0).'&id='.$row->id ?>"><?php echo $row->alias; ?></a><br/><?php echo $row->url; ?><br/><code><?php echo $row->cron_minute.' '.$row->cron_hour.' '.$row->cron_day.' '.$row->cron_month.' '.$row->cron_week; ?></code></td>
+                                <td><a href="<?php echo menu_page_url('setcron-task',0).'&id='.$row->id ?>"><?php echo $row->alias; ?></a><br/><?php echo $row->url; ?><br/><code><?php echo ($row->cron_minute)?$row->cron_minute:'0'; ?> <?= ($row->cron_hour)?$row->cron_hour:'0'; ?> <?= ($row->cron_day)?$row->cron_day:'0'; ?> <?= ($row->cron_month)?$row->cron_month:'0'; ?> <?= ($row->cron_week)?$row->cron_week:'0'; ?></code></td>
                                 <td><?php echo $row->timezone; ?></td>
                                 <td><?php echo $row->start; ?></td>
                                 <td><?php echo $row->end; ?></td>
@@ -327,7 +327,7 @@ function setcron_task() {
 
     wp_enqueue_style('jquery-ui-style', plugin_dir_url(__FILE__).'assets/jquery-ui/1.10.0/themes/smoothness/jquery-ui.css');
     wp_register_style('jquery-time-picker-style' , plugin_dir_url(__FILE__).'assets/jquery-ui-timepicker-addon/css/jquery-ui-timepicker-addon.css');
-    wp_enqueue_script('jquery-time-picker-script' ,  plugin_dir_url(__FILE__).'assets/jquery-ui-timepicker-addon/js/jquery-ui-timepicker-addon.min.js',  array('jquery','jquery-ui-datepicker','jquery-ui-slider'));	
+    wp_enqueue_script('jquery-time-picker-script' ,  plugin_dir_url(__FILE__).'assets/jquery-ui-timepicker-addon/js/jquery-ui-timepicker-addon.min.js',  array('jquery','jquery-ui-datepicker','jquery-ui-slider'));    
 
     $apikey = esc_attr(get_option('setcron_apikey'));
     if(!$apikey){
