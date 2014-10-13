@@ -6,8 +6,8 @@
   Plugin Name: SetCron
   Plugin URI: http://www.setcron.com/
   Description: SetCron allows you to schedule cronjobs on your wordpress admin panel. This service is provided for free by SetCron.com. To get started: 1) Click the "Activate" link to the left of this description, 2) <a href="www.setcron.com/signup">Sign up for a SetCron API key</a>, and 3) Go to your SetCron configuration page, and save your API key.
-  Stable tag: 1.1.1
-  Version: 1.1.1
+  Stable tag: 1.1.2
+  Version: 1.1.2
   Author: SetCron
   Author URI: http://www.setcron.com/
  */
@@ -131,17 +131,21 @@ function setcron_tasks() {
                 }
                 foreach($_POST['ids'] AS $id){
                     
-                    if($data['status'] == 1){
+                    if($data['status'] == 2){
+                        $data['id'] = $id;
+                        $args['headers'] = array('apikey' => $apikey, 'Accept' => 'json');
+                        $args['method'] = 'DELETE';
+                        $request  = wp_remote_request( SetCronAPI_URL.'task?id='.$id, $args);
+                        $done = true;
+                        
+                    } else {
+                        if($data['status'] != 1) {
+                            $data['status'] = 0;
+                        }
                         $data['id'] = $id;
                         $args['headers'] = array('apikey' => $apikey, 'Accept' => 'json');
                         $args['body'] = $data;
                         $args['method'] = 'PUT';
-                        $request  = wp_remote_request( SetCronAPI_URL.'task?id='.$id, $args);
-                        $done = true;
-                    } else {
-                        $data['id'] = $id;
-                        $args['headers'] = array('apikey' => $apikey, 'Accept' => 'json');
-                        $args['method'] = 'DELETE';
                         $request  = wp_remote_request( SetCronAPI_URL.'task?id='.$id, $args);
                         $done = true;
                     }

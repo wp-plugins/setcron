@@ -4,8 +4,8 @@ Site: https://setcron.com/
 Tags: admin, cronjob, cron, crontab, wp-cron, scheduled task, task scheduler, scheduled posts, web cron, plugin
 Requires at least: 3.0.1
 Tested up to: 3.9.x
-Version: 1.1.1
-Stable tag: 1.1.1
+Version: 1.1.2
+Stable tag: 1.1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
